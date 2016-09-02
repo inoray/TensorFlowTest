@@ -39,4 +39,9 @@ for step in xrange(2001):
     if step % 30 == 0:
         print step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(W), sess.run(b)
 
+# save model
+saver = tf.train.Saver()
+save_path = saver.save(sess, 'lr.pd')
+print('save_path', save_path)
+
 # Leanrs best fit is W : [0.1], b : [0.3]
