@@ -1,4 +1,6 @@
 import tensorflow as tf
+import numpy as np
+
 
 # Training Data
 x_data = [1., 2., 3.]
@@ -45,3 +47,6 @@ save_path = saver.save(sess, 'lr.pd')
 print('save_path', save_path)
 
 # Leanrs best fit is W : [0.1], b : [0.3]
+print sess.run(hypothesis, feed_dict={X:5})
+print sess.run(hypothesis, feed_dict={X:2.5})
+

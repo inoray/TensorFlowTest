@@ -3,6 +3,7 @@ import tensorflow as tf
 hello = tf.constant ("Hello, tensorflow.")
 sess = tf.Session()
 
+print(hello)
 print(sess.run(hello))
 
 a = tf.constant(2016)
