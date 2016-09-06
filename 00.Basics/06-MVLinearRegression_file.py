@@ -1,13 +1,16 @@
 import tensorflow as tf
+import numpy as np
 
-x_data = [[1, 1, 1, 1, 1],
-          [1., 0., 3., 0., 5.],
-          [0., 2., 0., 4., 0.]]
-y_data = [1, 2, 3, 4, 5]
+xy = np.loadtxt('train.txt', unpack=True, dtype='float32')
+x_data = xy[0:-1]
+y_data = xy[-1]
+
+print 'x', x_data
+print 'y', y_data
+
 
 # Try to find values for W
-W = tf.Variable(tf.random_uniform([1, 3], -1.0, 1.0))
-#b = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
+W = tf.Variable(tf.random_uniform([1, len(x_data)], -5.0, 5.0))
 
 # Our hypothesis
 #hypothesis = tf.matmul(W, x_data) + b
